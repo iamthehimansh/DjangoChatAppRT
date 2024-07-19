@@ -9,8 +9,11 @@
     <!-- <input id="chat-message-input" type="text" size="100">
     <input id="chat-message-submit" type="button" value="Send"> -->
     <script>
+        let EmojiList=[
+            "😀","😃","😄","😁","😆","😅","😂","🤣","😊","😇","🙂","🙃","😉","😌","😍","🥰","😘","😗","😙","😚","😋","😛","😝","😜","🤪","🤨","🧐","🤓","😎","🥸","🤩","🥳","😏","😒","😞","😔","😟","😕","🙁","☹️","😣","😖","😫","😩","🥺","😢","😭","😤","😠","😡","🤬","🤯","😳","🥵","🥶","😱","😨","😰","😥","😓","🤗","🤔","🤭","🤫","🤥","😶","😐","😑","😬","🙄","😯","😦","😧","😮","😲","😴","🤤","😪","😵","🤐","🥴","🤢","🤮","🤧","😷","🤒","🤕","🤑","🤠","😈","👿","👹","👺","🤡","💩","👻","💀","☠️","👽","👾","🤖","🎃","😺","😸","😹","😻","😼","😽","🙀","😿","😾","🤲","👐","🙌","👏","🤝","👍","👎","👊","✊","🤛","🤜","🤞","✌️","🤟","🤘","🤙","👈","👉","👆","👇","☝️","✋","🤚","🖐","🖖","👋","🤟","🤙","🤝","🤲","🙏"
+        ]
         let format_you=`<div class="flex items-start gap-3">
-          <div class="rounded-full bg-[#ffeaa7] text-3xl flex items-center justify-center w-10 h-10">🤠</div>
+          <div class="rounded-full bg-[#ffeaa7] text-3xl flex items-center justify-center w-10 h-10">$EM</div>
           <div class="grid gap-1 text-sm min-w-[50%] ">
             <div class="font-medium">Anonymous User</div>
             <div id="$ID"  class="bg-muted px-3 py-2 rounded-2xl max-w-[80%]"></div>
@@ -25,16 +28,16 @@
               
             </div>
           </div>
-          <div class="rounded-full bg-[#55efc4] text-3xl flex items-center justify-center w-10 h-10">😊</div>
+          <div class="rounded-full bg-[#55efc4] text-3xl flex items-center justify-center w-10 h-10">$EM</div>
         </div>
         
         `;
         function addMess(message,me){
             const id = Math.random().toString(36).substring(7)+message.length*2549737327937;
             if (me)
-                document.querySelector("#list").innerHTML+=format_me.replace("$ID",id);
+                document.querySelector("#list").innerHTML+=format_me.replace("$ID",id).replace("$EM",EmojiList[Math.floor(Math.random()*EmojiList.length)]);
             else 
-                document.querySelector("#list").innerHTML+=format_you.replace("$ID",id);
+                document.querySelector("#list").innerHTML+=format_you.replace("$ID",id).replace("$EM",EmojiList[Math.floor(Math.random()*EmojiList.length)]);
             document.getElementById(id).innerText = message;
             scrollToEnd(id);
             return id;
@@ -133,5 +136,6 @@
         Send
     </button>
   </div>
+  <div class=" text-center text-sm text-gray-500  text-muted-foreground">All chats will be deleted if you close or reload the window. We are not storing any of your messages. Additionally, any emojis you see may not necessarily be visible to everyone.</div>
 </body>
 </html>
