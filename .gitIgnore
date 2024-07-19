@@ -1,2 +1,5 @@
 venv
 db.*
+*pyc
+*.rdb
+*/__pycache__/*

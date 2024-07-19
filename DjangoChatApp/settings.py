@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    "daphne",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -39,12 +40,12 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     
     
-    'channels',
+    # 'channels',
     'chat',
 ]
 
 
-ASGI_APPLICATION = 'chatproject.asgi.application'
+ASGI_APPLICATION = 'DjangoChatApp.asgi.application'
 
 CHANNEL_LAYERS = {
     'default': {
@@ -71,7 +72,9 @@ ROOT_URLCONF = "DjangoChatApp.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [
+            BASE_DIR / "/templates",
+            ],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
