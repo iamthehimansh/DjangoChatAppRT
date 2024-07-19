@@ -57,10 +57,12 @@ Below are some screenshots showing the chat interface, Redis insights, and termi
 
 ### Chat Interface
 ![Chat Interface](imgs/chat1.png)
+---
 ![Chat Interface](imgs/chat2.png)
 
 ### Redis Insights
 ![Redis Insights](imgs/redis-insite2.png)
+---
 ![Redis Insights](imgs/redis-insite2.png)
 
 ### Terminal Commands
