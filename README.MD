@@ -54,6 +54,8 @@ room_data["Gaming"] = 470
 
 ## Screenshots
 Below are some screenshots showing the chat interface, Redis insights, and terminal commands.
+### Home Page
+![Home Page](imgs/Home.png)
 
 ### Chat Interface
 ![Chat Interface](imgs/chat1.png)
