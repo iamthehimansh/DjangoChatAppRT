@@ -1,13 +1,135 @@
+{% load custom_filters %}
 <!DOCTYPE html>
-<html>
+<html class="dark">
 <head>
-    <title>Chat Rooms</title>
+    <title>BuildInBharat Rooms</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        function joinChat(){
+            const  url=prompt("Enter the room name");
+            if(url){
+                window.location.href=url;
+
+        }}
+    </script>
 </head>
 <body>
-    <h1>Chat Rooms</h1>
+    <!-- <h1>Chat Rooms</h1>
     <ul>
         <li><a href="{% url 'room' 'room1' %}">Room 1</a></li>
         <li><a href="{% url 'room' 'room2' %}">Room 2</a></li>
-    </ul>
+    </ul> -->
+
+
+    <!--
+// v0 by Vercel.
+// https://v0.dev/t/8e0mzluXmhC
+-->
+
+<!--
+// v0 by Vercel.
+// https://v0.dev/t/z0lvmPRUMsQ
+-->
+
+<div class="w-full min-h-screen bg-background text-foreground dark">
+    <header class="bg-primary text-primary-foreground py-4 px-6 flex items-center justify-between">
+      <a class="flex items-center gap-2 font-bold text-xl" href="#">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="w-6 h-6"
+        >
+          <circle cx="12" cy="10" r="8"></circle>
+          <circle cx="12" cy="10" r="3"></circle>
+          <path d="M7 22h10"></path>
+          <path d="M12 22v-4"></path>
+        </svg>
+        <span>BuildInBharat Chat</span>
+      </a>
+      <button class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 rounded-full">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="w-5 h-5"
+        >
+          <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+          <circle cx="12" cy="7" r="4"></circle>
+        </svg>
+        <span class="sr-only">Profile</span>
+      </button>
+    </header>
+    <main class="container mx-auto py-12 px-4 md:px-6">
+      <div class="max-w-3xl mx-auto space-y-8">
+        <div class="text-center">
+          <h1 class="text-4xl font-bold">Join the Conversation</h1>
+          <p class="text-muted-foreground mt-2 text-lg">Chat anonymously with people around the world.</p>
+          <button
+            class="inline-flex items-center justify-center bg-primary text-primary-foreground rounded-md px-6 py-3 font-medium text-lg mt-6 transition-colors hover:bg-primary/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+            onclick="joinChat()"
+          >
+            Enter Chat
+          </button>
+        </div>
+        <div class="bg-card rounded-xl p-6 shadow-sm">
+          <h2 class="text-2xl font-bold mb-4">Top Trending Rooms</h2>
+          <div class="grid gap-4">
+            <a
+              href="{% url 'room' 'Technology' %}"
+              class="bg-muted rounded-lg p-4 flex items-center justify-between hover:bg-muted/50 transition-colors"
+            >
+              <div>
+                <h3 class="font-medium text-lg">Technology</h3>
+                <p class="text-muted-foreground text-sm">Discuss the latest tech news and innovations.</p>
+              </div>
+              <div class="bg-primary text-primary-foreground rounded-full px-3 py-1 text-sm font-medium">{{rooms.Technology|format_number}}</div>
+            </a>
+            <a
+              class="bg-muted rounded-lg p-4 flex items-center justify-between hover:bg-muted/50 transition-colors"
+              href="{% url 'room' 'Travel' %}"
+            >
+              <div>
+                <h3 class="font-medium text-lg">Travel</h3>
+                <p class="text-muted-foreground text-sm">Share your adventures and explore new destinations.</p>
+              </div>
+              <div class="bg-primary text-primary-foreground rounded-full px-3 py-1 text-sm font-medium">{{rooms.Travel|format_number}}</div>
+            </a>
+            <a
+              href="{% url 'room' 'Gaming' %}"
+              class="bg-muted rounded-lg p-4 flex items-center justify-between hover:bg-muted/50 transition-colors"
+            >
+              <div>
+                <h3 class="font-medium text-lg">Gaming</h3>
+                <p class="text-muted-foreground text-sm">
+                  Connect with fellow gamers and discuss your favorite titles.
+                </p>
+              </div>
+              <div class="bg-primary text-primary-foreground rounded-full px-3 py-1 text-sm font-medium">
+                {{rooms.Gaming|format_number}}
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="bg-card text-muted-foreground py-4 px-6 flex items-center justify-between">
+      <p class="text-sm">© 2024 BuildInBharat Chat. All rights reserved.</p>
+      <nav class="flex items-center gap-4"></nav>
+    </footer>
+  </div>
+  
 </body>
 </html>
