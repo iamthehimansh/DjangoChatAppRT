@@ -18,7 +18,7 @@ room_data["Gaming"] = 470
 ## Setup
 1. Clone the repository:
    ```bash
-   git clone <repository_url>
+   git clone https://github.com/iamthehimansh/DjangoChatAppRT.git
    cd DjangoChatApp
    ```
 
